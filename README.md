@@ -36,6 +36,7 @@ Remember, we never commit code on the ```master``` branch directly. Everything t
 Git flow will also switch to this branch and you can start working on this feature.
 
 	git flow feature start documenation_101
+	
 	Switched to a new branch 'feature/documenation_101'
 
 	Summary of actions:
@@ -126,6 +127,49 @@ This means that when you have finished a release, in order to push your tags you
 	Total 1 (delta 0), reused 0 (delta 0)
 	To git@github.com:ddewaele/GitFlowDemo.git
 	 * [new tag]         1.2 -> 1.2
+
+
+### Viewing your changes
+
+When executing the following command:
+
+	git log --graph --all --oneline
+
+you should get this outcome:
+
+	*   727e7fa Merge branch 'release/1.2'
+	|\  
+	| * ca0d6d4 updated docs
+	| * da3f9e2 working on docs
+	| *   de4ff1f Merge branch 'feature/documenation_101' into develop
+	| |\  
+	| | * 2445053 updated docs
+	| | * 194b096 working on docs
+	| |/  
+	| *   d5a1fb7 Merge branch 'feature/add_primary_business_logic' into develop
+	| |\  
+	| | *   c9388e4 Merge pull request #1 from ddewaeletest/feature/add_primary_business_logic
+	| | |\  
+	| | | * 7dff3b6 ddewaeletest also working
+	| | |/  
+	| | * 94b6673 working on business logic feature
+	| |/  
+	| *   9006548 Merge branch 'release/1.1' into develop
+	| |\  
+	* | \   621cbfd Merge branch 'release/1.1'
+	|\ \ \  
+	| | |/  
+	| |/|   
+	| * | f70b2ed bumping version
+	| |/  
+	| * e3cc5bb initializing project
+	* |   1469103 Merge branch 'release/1.0'
+	|\ \  
+	| |/  
+	| * b1cae29 readme
+	|/  
+	* 53388f8 Initial commit
+
 
 
 ## Questions
