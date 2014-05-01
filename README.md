@@ -268,6 +268,35 @@ There seems to be 2 ways of doing it :
 - git flow feature finish with -F.
 
 
+### Starting a release with un-merged features (documenten directly in release 1.6)
+
+Imagine sitting on the following feature (un-finished)
+
+	git status
+	# On branch feature/documenation_108
+
+And then you start a new release
+
+	git flow release start 1.6
+
+Gitflow will switch to a new branch based on develop.
+
+	Switched to a new branch 'release/1.6'
+
+	Summary of actions:
+	- A new branch 'release/1.6' was created, based on 'develop'
+	- You are now on branch 'release/1.6'
+
+	Follow-up actions:
+	- Bump the version number now!
+	- Start committing last-minute fixes in preparing your release
+	- When done, run:
+
+	     git flow release finish '1.6'
+
+Is it at this point still possible to bring in the feature ?
+
+
 ## After release has started, no way to pull in stuff from develop
 
 It needs to be very clear that once you started on a release, any features that were open (and were not part of develop) will not be part of this release.
@@ -282,6 +311,23 @@ Git flow doesn't support multiple releases.
 	There is an existing release branch (1.6). Finish that one first.
 
 
+## What if we have conflicts
+
+	git flow release finish 1.6 
+	
+	Switched to branch 'master'
+	Merge made by recursive.
+	 README.md       |   29 +++++++++++++++++++++++++++++
+	 file-for-1.6.md |    1 +
+	 2 files changed, 30 insertions(+), 0 deletions(-)
+	 create mode 100644 file-for-1.6.md
+	Switched to branch 'develop'
+	Auto-merging README.md
+	CONFLICT (content): Merge conflict in README.md
+	Automatic merge failed; fix conflicts and then commit the result.
+	There were merge conflicts.
 
 ## References
+
+
 
