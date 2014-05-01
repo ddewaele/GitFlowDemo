@@ -1,3 +1,5 @@
+Version 1.8
+
 ## Introduction
 
 - no new functionality to Git
