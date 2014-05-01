@@ -206,6 +206,35 @@ So at what point do we decide when we need to start a release ?
 - When we want to start working on features for v2.0 ?
 
 
+### Starting a release with un-merged features (documenten directly in release 1.6)
+
+Imagine sitting on the following feature (un-finished)
+
+	git status
+	# On branch feature/documenation_108
+
+And then you start a new release
+
+	git flow release start 1.6
+
+Gitflow will switch to a new branch based on develop.
+
+	Switched to a new branch 'release/1.6'
+
+	Summary of actions:
+	- A new branch 'release/1.6' was created, based on 'develop'
+	- You are now on branch 'release/1.6'
+
+	Follow-up actions:
+	- Bump the version number now!
+	- Start committing last-minute fixes in preparing your release
+	- When done, run:
+
+	     git flow release finish '1.6'
+
+Is it at this point still possible to bring in the feature ?
+
+
 ## References
 
 
