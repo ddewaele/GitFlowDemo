@@ -106,6 +106,26 @@ When the feature was finished completely the following thing happens :
 	- You are now on branch 'develop'
 
 
+### Pushing your changes
+
+By default, if you do a ```git push``` your tags will not be pushed.
+
+	git push
+	Counting objects: 1, done.
+	Writing objects: 100% (1/1), 219 bytes, done.
+	Total 1 (delta 0), reused 0 (delta 0)
+	To git@github.com:ddewaele/GitFlowDemo.git
+	   621cbfd..727e7fa  master -> master
+
+This means that when you have finished a release, in order to push your tags you'll need to use the ```--tags``` flag like this:
+
+	git push --tags
+
+	Counting objects: 1, done.
+	Writing objects: 100% (1/1), 158 bytes, done.
+	Total 1 (delta 0), reused 0 (delta 0)
+	To git@github.com:ddewaele/GitFlowDemo.git
+	 * [new tag]         1.2 -> 1.2
 
 
 ## Questions
