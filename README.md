@@ -61,6 +61,34 @@ If this is a feature where multiple people will be working on you can push it to
 	 * [new branch]      feature/documenation_101 -> feature/documenation_101
 	Branch feature/documenation_101 set up to track remote branch feature/documenation_101 from origin.
 
+### Finishing a feature
+
+When you try to finish a feature with unstages changes you will get an error:
+
+	git flow feature finish documenation_101
+	fatal: Working tree contains unstaged changes. Aborting.
+
+So make sure you check everything in 
+
+
+
+	git flow feature finish documenation_101
+	Switched to branch 'develop'
+	Merge made by recursive.
+	 README.md |   67 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--
+	 1 files changed, 64 insertions(+), 3 deletions(-)
+	warning: not deleting branch 'feature/documenation_101' that is not yet merged to
+	         'refs/remotes/origin/feature/documenation_101', even though it is merged to HEAD.
+	error: The branch 'feature/documenation_101' is not fully merged.
+	If you are sure you want to delete it, run 'git branch -D feature/documenation_101'.
+
+	Summary of actions:
+	- The feature branch 'feature/documenation_101' was merged into 'develop'
+	- Feature branch 'feature/documenation_101' has been removed
+	- You are now on branch 'develop'
+
+
+
 ## Questions
 
 When starting a feature. does it matter on what branch we're on when we execute the command ?
