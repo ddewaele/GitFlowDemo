@@ -8,6 +8,16 @@ shell macros to new functions
 - branches are cheap
 - merging is easy
 
+## Some scenarios
+
+- You and your team are developpping features.
+- You finish features (meaning they are merged into the development branch)
+- At some point you need to create a feature out of this.
+- You'll typically close this feature very soon after creating itm because all features will have been merged into development
+- Ater finishing the release it is merged to master and tagged.
+
+Suppose you want to develop a feature for a future release.
+
 
 ## Getting started
 
