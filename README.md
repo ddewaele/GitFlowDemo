@@ -1,9 +1,10 @@
 ## Introduction
 
-no new functionality to get
-uses standard git functionality (branching / merging)
-shell macros to new functions
+= no new functionality to Git
+= uses standard git functionality (branching / merging)
+= shell macros to new functions
 
+Key assumptions:
 
 - branches are cheap
 - merging is easy
@@ -81,8 +82,8 @@ When you try to finish a feature with unstages changes you will get an error:
 
 So make sure you check everything in 
 
-When everything has been checked in your feature will be merged into ```develop```.
 
+When you published your feature but haven't kept in sync with the remove you'll get the following error:
 
 	git flow feature finish documenation_101
 	Switched to branch 'develop'
@@ -98,6 +99,11 @@ When everything has been checked in your feature will be merged into ```develop`
 	- The feature branch 'feature/documenation_101' was merged into 'develop'
 	- Feature branch 'feature/documenation_101' has been removed
 	- You are now on branch 'develop'
+
+In order to avoid this always ensure that it has been synced with the remote by doing 
+
+	git flow feature publish documenation_101
+
 
 When the feature was finished completely the following thing happens :
 
@@ -137,6 +143,50 @@ This means that when you have finished a release, in order to push your tags you
 	Total 1 (delta 0), reused 0 (delta 0)
 	To git@github.com:ddewaele/GitFlowDemo.git
 	 * [new tag]         1.2 -> 1.2
+
+
+## Releases
+
+### Starting releases
+
+	git flow release start 1.5
+
+Response :
+
+	Switched to a new branch 'release/1.5'
+
+	Summary of actions:
+	- A new branch 'release/1.5' was created, based on 'develop'
+	- You are now on branch 'release/1.5'
+
+	Follow-up actions:
+	- Bump the version number now!
+	- Start committing last-minute fixes in preparing your release
+	- When done, run:
+
+### Finishing a release
+
+     git flow release finish '1.5'
+
+Resposne :
+
+	Davys-MacBook-Air:GitFlowDemo ddewaele$ git status
+	# On branch release/1.5
+	nothing to commit (working directory clean)
+	Davys-MacBook-Air:GitFlowDemo ddewaele$ git flow release finish '1.5'
+	Switched to branch 'master'
+	Merge made by recursive.
+	 README.md |   40 +++++++++++++++++++++++++++++++++++++++-
+	 1 files changed, 39 insertions(+), 1 deletions(-)
+	Deleted branch release/1.5 (was d7d9362).
+
+	Summary of actions:
+	- Latest objects have been fetched from 'origin'
+	- Release branch has been merged into 'master'
+	- The release was tagged '1.5'
+	- Release branch has been back-merged into 'develop'
+	- Release branch 'release/1.5' has been deleted
+
 
 
 ### Viewing your changes
@@ -206,6 +256,18 @@ So at what point do we decide when we need to start a release ?
 - When we want to start working on features for v2.0 ?
 
 
+## Deleting remote branches
+
+If you're working on a feature branch by yourself it might not always be necessary to publish it, but when multiple people need to work on a feature it is required.
+
+Gitflow by default does not delete remote feature branches when they are finished. 
+
+There seems to be 2 ways of doing it :
+
+- git push origin :feature/new
+- git flow feature finish with -F.
+
+
 ### Starting a release with un-merged features (documenten directly in release 1.6)
 
 Imagine sitting on the following feature (un-finished)
@@ -235,10 +297,37 @@ Gitflow will switch to a new branch based on develop.
 Is it at this point still possible to bring in the feature ?
 
 
+## After release has started, no way to pull in stuff from develop
+
+It needs to be very clear that once you started on a release, any features that were open (and were not part of develop) will not be part of this release.
+
+
+## Multiple releases
+
+Git flow doesn't support multiple releases.
+
+	git flow release start 1.7
+
+	There is an existing release branch (1.6). Finish that one first.
+
+
+## What if we have conflicts
+
+	git flow release finish 1.6 
+	
+	Switched to branch 'master'
+	Merge made by recursive.
+	 README.md       |   29 +++++++++++++++++++++++++++++
+	 file-for-1.6.md |    1 +
+	 2 files changed, 30 insertions(+), 0 deletions(-)
+	 create mode 100644 file-for-1.6.md
+	Switched to branch 'develop'
+	Auto-merging README.md
+	CONFLICT (content): Merge conflict in README.md
+	Automatic merge failed; fix conflicts and then commit the result.
+	There were merge conflicts.
+
 ## References
-
-
-
 
 
 
