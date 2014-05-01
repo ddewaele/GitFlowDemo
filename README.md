@@ -276,12 +276,23 @@ This translates in the following commands
 	git add -A && git commit -m "release 1.9 : feature2"
 	git flow feature finish feature_1.9_feature2
 
+
+	(commit some stuff here on dev directly)
+	git flow release start 1.9
+
+
 	git flow feature start feature_1.9_feature3
 	echo "release 1.9 : feature3" >> dynamic.md
 	git add -A && git commit -m "release 1.9 : feature3"
 	git flow feature finish feature_1.9_feature3
 
-	git flow release start 1.9
+
+	git flow feature start feature_1.9_feature4
+	echo "release 1.9 : feature4" >> dynamic.md
+	git add -A && git commit -m "release 1.9 : feature4"
+	git flow feature finish feature_1.9_feature4
+	
+	git flow release finsih 1.10
 
 
 # Questions
