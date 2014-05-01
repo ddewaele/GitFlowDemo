@@ -254,16 +254,34 @@ So at what point do we decide when we need to start a release ?
 - no new versions have been created.
 - start feature branch feature1  ; do development ; finish feature branch feature1
 - start feature branch feature2 ; do development ; finish feature branch feature2
-- start feature branch feature3 ; do development ; finish feature branch feature3
 - start release 1.9
+- start feature branch feature3 ; do development ; finish feature branch feature3
 - start feature branch feature4 ; do development ; finish feature branch feature4
-- start feature branch feature5 ; do development ; finish feature branch feature5
 - do development for release 1.9 by commiting directly on 1.9
 - do development for release 1.9 by commiting directly on 1.9
 - finish release 1.9
 - start release 1.10
 - finish release 1.10
 
+This translates in the following commands
+
+	git flow feature start feature_1.9_feature1
+	echo "release 1.9 : feature1" >> dynamic.md
+	git add -A && git commit -m "release 1.9 : feature1"
+	git flow feature finish feature_1.9_feature1
+
+
+	git flow feature start feature_1.9_feature2
+	echo "release 1.9 : feature2" >> dynamic.md
+	git add -A && git commit -m "release 1.9 : feature2"
+	git flow feature finish feature_1.9_feature2
+
+	git flow feature start feature_1.9_feature3
+	echo "release 1.9 : feature3" >> dynamic.md
+	git add -A && git commit -m "release 1.9 : feature3"
+	git flow feature finish feature_1.9_feature3
+
+	git flow release start 1.9
 
 
 # Questions
