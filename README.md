@@ -70,6 +70,7 @@ When you try to finish a feature with unstages changes you will get an error:
 
 So make sure you check everything in 
 
+When everything has been checked in your feature will be merged into ```develop```.
 
 
 	git flow feature finish documenation_101
@@ -86,6 +87,24 @@ So make sure you check everything in
 	- The feature branch 'feature/documenation_101' was merged into 'develop'
 	- Feature branch 'feature/documenation_101' has been removed
 	- You are now on branch 'develop'
+
+When the feature was finished completely the following thing happens :
+
+
+	Davys-MacBook-Air:GitFlowDemo ddewaele$ git flow feature finish documenation_102
+	Switched to branch 'develop'
+	Your branch is ahead of 'origin/develop' by 3 commits.
+	Updating de4ff1f..da3f9e2
+	Fast-forward
+	 README.md |   28 ++++++++++++++++++++++++++++
+	 1 files changed, 28 insertions(+), 0 deletions(-)
+	Deleted branch feature/documenation_102 (was da3f9e2).
+
+	Summary of actions:
+	- The feature branch 'feature/documenation_102' was merged into 'develop'
+	- Feature branch 'feature/documenation_102' has been removed
+	- You are now on branch 'develop'
+
 
 
 
