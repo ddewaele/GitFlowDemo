@@ -1,8 +1,10 @@
+Version 1.8
+
 ## Introduction
 
-= no new functionality to Git
-= uses standard git functionality (branching / merging)
-= shell macros to new functions
+- no new functionality to Git
+- uses standard git functionality (branching / merging)
+- shell macros to new functions
 
 Key assumptions:
 
@@ -231,8 +233,40 @@ you should get this outcome:
 	* 53388f8 Initial commit
 
 
+# Scenarios
 
-## Questions
+## General versioning
+
+Suppose we are developing our product, our first release is going to be v1.0
+We are developping features and finishing them on the develop branch.
+At this point there is no release yet. 
+Obviously we are already thinking about v2.0 and there's this feature that we would already like to get started on
+
+So at what point do we decide when we need to start a release ?
+
+- When we are almost feature-complete for v1.0 
+- When we want to start working on features for v2.0 ?
+
+## Actual scenario
+
+
+- v1.8 is in production
+- no new versions have been created.
+- start feature branch feature1  ; do development ; finish feature branch feature1
+- start feature branch feature2 ; do development ; finish feature branch feature2
+- start feature branch feature3 ; do development ; finish feature branch feature3
+- start release 1.9
+- start feature branch feature4 ; do development ; finish feature branch feature4
+- start feature branch feature5 ; do development ; finish feature branch feature5
+- do development for release 1.9 by commiting directly on 1.9
+- do development for release 1.9 by commiting directly on 1.9
+- finish release 1.9
+- start release 1.10
+- finish release 1.10
+
+
+
+# Questions
 
 When starting a feature. does it matter on what branch we're on when we execute the command ?
 Feature branches (or sometimes called topic branches) are used to develop new features for the upcoming or a distant future release.
@@ -244,16 +278,6 @@ The key moment to branch off a new release branch from develop is when develop (
 
 So until the release branch is branched off all features targeted future releases are un-finished. They are not merged to dev.
 (if they were moved to dev to would go into the next release.)
-
-Suppose we are developing our product, our first release is going to be v1.0
-We are developping features and finishing them on the develop branch.
-At this point there is no release yet. 
-Obviously we are already thinking about v2.0 and there's this feature that we would already like to get started on
-
-So at what point do we decide when we need to start a release ?
-
-- When we are almost feature-complete for v1.0 
-- When we want to start working on features for v2.0 ?
 
 
 ## Deleting remote branches
@@ -329,5 +353,19 @@ Git flow doesn't support multiple releases.
 
 ## References
 
+
+
+
+
+
+gman features
+merge in develop
+start v1.0
+
+
+
+
+gps features
+merge in develop  (1.1)
 
 
