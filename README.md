@@ -81,8 +81,8 @@ When you try to finish a feature with unstages changes you will get an error:
 
 So make sure you check everything in 
 
-When everything has been checked in your feature will be merged into ```develop```.
 
+When you published your feature but haven't kept in sync with the remove you'll get the following error:
 
 	git flow feature finish documenation_101
 	Switched to branch 'develop'
@@ -98,6 +98,11 @@ When everything has been checked in your feature will be merged into ```develop`
 	- The feature branch 'feature/documenation_101' was merged into 'develop'
 	- Feature branch 'feature/documenation_101' has been removed
 	- You are now on branch 'develop'
+
+In order to avoid this always ensure that it has been synced with the remote by doing 
+
+	git flow feature publish documenation_101
+
 
 When the feature was finished completely the following thing happens :
 
@@ -204,6 +209,19 @@ So at what point do we decide when we need to start a release ?
 
 - When we are almost feature-complete for v1.0 
 - When we want to start working on features for v2.0 ?
+
+
+## Deleting remote branches
+
+Gitflow by default does not delete remote feature branches when they are finished.
+
+There seems to be 2 ways of doing it :
+
+- git push origin :feature/new
+- git flow feature finish with -F.
+
+
+
 
 
 ## References
