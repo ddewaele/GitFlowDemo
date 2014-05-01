@@ -219,22 +219,20 @@ And then you start a new release
 
 Gitflow will switch to a new branch based on develop.
 
-Switched to a new branch 'release/1.6'
+	Switched to a new branch 'release/1.6'
 
-Summary of actions:
-- A new branch 'release/1.6' was created, based on 'develop'
-- You are now on branch 'release/1.6'
+	Summary of actions:
+	- A new branch 'release/1.6' was created, based on 'develop'
+	- You are now on branch 'release/1.6'
 
-Follow-up actions:
-- Bump the version number now!
-- Start committing last-minute fixes in preparing your release
-- When done, run:
+	Follow-up actions:
+	- Bump the version number now!
+	- Start committing last-minute fixes in preparing your release
+	- When done, run:
 
-     git flow release finish '1.6'
+	     git flow release finish '1.6'
 
 Is it at this point still possible to bring in the feature ?
-
-
 
 
 ## References
