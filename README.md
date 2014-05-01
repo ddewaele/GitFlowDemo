@@ -144,6 +144,50 @@ This means that when you have finished a release, in order to push your tags you
 	 * [new tag]         1.2 -> 1.2
 
 
+## Releases
+
+### Starting releases
+
+	git flow release start 1.5
+
+Response :
+
+	Switched to a new branch 'release/1.5'
+
+	Summary of actions:
+	- A new branch 'release/1.5' was created, based on 'develop'
+	- You are now on branch 'release/1.5'
+
+	Follow-up actions:
+	- Bump the version number now!
+	- Start committing last-minute fixes in preparing your release
+	- When done, run:
+
+### Finishing a release
+
+     git flow release finish '1.5'
+
+Resposne :
+
+	Davys-MacBook-Air:GitFlowDemo ddewaele$ git status
+	# On branch release/1.5
+	nothing to commit (working directory clean)
+	Davys-MacBook-Air:GitFlowDemo ddewaele$ git flow release finish '1.5'
+	Switched to branch 'master'
+	Merge made by recursive.
+	 README.md |   40 +++++++++++++++++++++++++++++++++++++++-
+	 1 files changed, 39 insertions(+), 1 deletions(-)
+	Deleted branch release/1.5 (was d7d9362).
+
+	Summary of actions:
+	- Latest objects have been fetched from 'origin'
+	- Release branch has been merged into 'master'
+	- The release was tagged '1.5'
+	- Release branch has been back-merged into 'develop'
+	- Release branch 'release/1.5' has been deleted
+
+
+
 ### Viewing your changes
 
 When executing the following command:
@@ -213,7 +257,9 @@ So at what point do we decide when we need to start a release ?
 
 ## Deleting remote branches
 
-Gitflow by default does not delete remote feature branches when they are finished.
+If you're working on a feature branch by yourself it might not always be necessary to publish it, but when multiple people need to work on a feature it is required.
+
+Gitflow by default does not delete remote feature branches when they are finished. 
 
 There seems to be 2 ways of doing it :
 
@@ -225,9 +271,4 @@ There seems to be 2 ways of doing it :
 
 
 ## References
-
-
-
-
-
 
