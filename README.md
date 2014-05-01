@@ -268,7 +268,9 @@ There seems to be 2 ways of doing it :
 - git flow feature finish with -F.
 
 
+## After release has started, no way to pull in stuff from develop
 
+It needs to be very clear that once you started on a release, any features that were open (and were not part of develop) will not be part of this release.
 
 
 ## References
