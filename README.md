@@ -1,9 +1,10 @@
 ## Introduction
 
-no new functionality to get
-uses standard git functionality (branching / merging)
-shell macros to new functions
+= no new functionality to Git
+= uses standard git functionality (branching / merging)
+= shell macros to new functions
 
+Key assumptions:
 
 - branches are cheap
 - merging is easy
