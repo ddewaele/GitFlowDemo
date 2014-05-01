@@ -8,6 +8,16 @@ shell macros to new functions
 - branches are cheap
 - merging is easy
 
+## Some scenarios
+
+- You and your team are developpping features.
+- You finish features (meaning they are merged into the development branch)
+- At some point you need to create a feature out of this.
+- You'll typically close this feature very soon after creating itm because all features will have been merged into development
+- Ater finishing the release it is merged to master and tagged.
+
+Suppose you want to develop a feature for a future release.
+
 
 ## Getting started
 
@@ -175,3 +185,31 @@ you should get this outcome:
 ## Questions
 
 When starting a feature. does it matter on what branch we're on when we execute the command ?
+Feature branches (or sometimes called topic branches) are used to develop new features for the upcoming or a distant future release.
+So how do you handle multiple releases being developed in parallel (so different features being developped for different releases that haven't gone into production yet).
+
+
+The key moment to branch off a new release branch from develop is when develop (almost) reflects the desired state of the new release. At least all features that are targeted for the release-to-be-built must be merged in to develop at this point in time. All features targeted at future releases may not—they must wait until after the release branch is branched off.
+
+
+So until the release branch is branched off all features targeted future releases are un-finished. They are not merged to dev.
+(if they were moved to dev to would go into the next release.)
+
+Suppose we are developing our product, our first release is going to be v1.0
+We are developping features and finishing them on the develop branch.
+At this point there is no release yet. 
+Obviously we are already thinking about v2.0 and there's this feature that we would already like to get started on
+
+So at what point do we decide when we need to start a release ?
+
+- When we are almost feature-complete for v1.0 
+- When we want to start working on features for v2.0 ?
+
+
+## References
+
+
+
+
+
+
