@@ -273,5 +273,15 @@ There seems to be 2 ways of doing it :
 It needs to be very clear that once you started on a release, any features that were open (and were not part of develop) will not be part of this release.
 
 
+## Multiple releases
+
+Git flow doesn't support multiple releases.
+
+	git flow release start 1.7
+
+	There is an existing release branch (1.6). Finish that one first.
+
+
+
 ## References
 
