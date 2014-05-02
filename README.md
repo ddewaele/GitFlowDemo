@@ -40,7 +40,11 @@ Suppose you want to develop a feature for a future release.
 
 	Try 'git flow <subcommand> help' for details.
 
-### Starting a feature
+# Features
+
+## Intro
+
+## Starting a feature
 
 We start by creating a new feature called ```documenation_101```.
 What will happen is that a new feature branch will be created called ```feature/documenation_101``` based on the development branch.
@@ -60,9 +64,11 @@ Git flow will also switch to this branch and you can start working on this featu
 
 	     git flow feature finish documenation_101
 
-### Optional pushing the feature to remote
+## Optional pushing the feature to remote
 
-If this is a feature where multiple people will be working on you can push it to the remove
+If this is a feature where multiple people will be working on you can push it to the remote.
+
+There are a couple of ways to do that. You could simply use the standard ```git push``` command.
 
 	git push -u origin feature/documenation_101
 
@@ -74,6 +80,22 @@ If this is a feature where multiple people will be working on you can push it to
 	To git@github.com:ddewaele/GitFlowDemo.git
 	 * [new branch]      feature/documenation_101 -> feature/documenation_101
 	Branch feature/documenation_101 set up to track remote branch feature/documenation_101 from origin.
+
+Or you can use the git flow ```feature publish``` command
+
+	git flow feature publish feature_1.11_feature1
+	Total 0 (delta 0), reused 0 (delta 0)
+	To git@github.com:ddewaele/GitFlowDemo.git
+	 * [new branch]      feature/feature_1.11_feature1 -> feature/feature_1.11_feature1
+	Already on 'feature/feature_1.11_feature1'
+
+	Summary of actions:
+	- A new remote branch 'feature/feature_1.11_feature1' was created
+	- The local branch 'feature/feature_1.11_feature1' was configured to track the remote branch
+	- You are now on branch 'feature/feature_1.11_feature1'
+
+
+
 
 ### Finishing a feature
 
@@ -292,8 +314,20 @@ This translates in the following commands
 	git add -A && git commit -m "release 1.9 : feature4"
 	git flow feature finish feature_1.9_feature4
 	
-	git flow release finsih 1.10
+	git flow release finish 1.10
 
+
+	git flow feature start feature_1.11_feature1
+	git flow feature publish feature_1.11_feature1
+	echo "release 1.11 : feature1" >> dynamic.md
+	git add -A && git commit -m "release 1.11 : feature1"
+	git flow feature finish feature_1.11_feature1
+
+
+	git flow feature start feature_1.11_feature1
+	echo "release 1.9 : feature4" >> dynamic.md
+	git add -A && git commit -m "release 1.9 : feature4"
+	git flow feature finish feature_1.9_feature4
 
 # Questions
 
@@ -382,19 +416,10 @@ Git flow doesn't support multiple releases.
 
 ## References
 
-
-
-
-
-
-gman features
-merge in develop
-start v1.0
-
-
-
-
-gps features
-merge in develop  (1.1)
-
+http://dymitruk.com/blog/2012/02/05/branch-per-feature/
+http://www.syntevo.com/smartgithg/documentation/5/show?page=git-flow
+http://nvie.com/posts/a-successful-git-branching-model/
+https://github.com/nvie/rq
+https://github.com/Particular/GitVersion/wiki/GitFlowExamples
+http://danielkummer.github.io/git-flow-cheatsheet/
 
